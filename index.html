@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>DevHealth</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/Users/lukefuller/project1/assets/css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+
+  <script rel="stylesheet" type="text/javascript" src="/Users/lukefuller/project1/assets/js/run.js"></script>
+
+</head>
+
+
+<body>
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="../images/coke2.jpg"> <!-- random image -->
+        <!--Add text to slider images???-->
+        <div class="caption right-align">
+          <h3 class="black-text"></h3>
+          <h5 class="light black-text text-lighten-3"></h5>
+        </div>
+      </li>
+      <li>
+        <img src="../images/monster.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3></h3>
+          <h5 class="light grey-text text-lighten-3"></h5>
+        </div>
+      </li>
+      <li>
+        <img src="../images/mountainDew2.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3></h3>
+          <h5 class="light grey-text text-lighten-3"></h5>
+        </div>
+      </li>
+      <li>
+        <img src="../images/redbull.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3></h3>
+          <h5 class="light grey-text text-lighten-3"></h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <nav>
+    <div class="nav-wrapper blue darken-3 purple-text">
+      <a href="#" class="brand-logo center white-text">DevHealth</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="">Home</a></li>
+        <li><a href="nyt.html">Research Articles</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="row">
+    <form class=" white col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+  </div>
+  </div>
+  </form>
+
+  </div>
+  <div>
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn blue' href='#' data-activates='dropdown1'>Beverage</a>
+
+    <!-- Dropdown Structure -->
+
+    <ul id='dropdown1' class='dropdown-content'>
+      <li class="coke" value="coke"><a href="#!" id="coke">Coke</a></li>
+      <li class="redBull" value="redBull"><a href="#!" id="coke">Red Bull</a></li>
+      <li class="monster" value="monster"><a href="#!" id="coke">Monster</a></li>
+      <li class="mountainDew" value="mountainDew"><a href="#!" id="coke">Mountain Dew</a></li>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <!-- Dropdown Trigger -->
+    <a class='dropdown-button btn blue' href='#' data-activates='dropdown2'>Consumed</a>
+
+    <!-- Dropdown Structure -->
+
+    <ul id='dropdown2' class='dropdown-content'>
+      <li class="one" value="one"><a href="#!" id="uno">One</a></li>
+      <li class="two" value="two"><a href="#!" id="dos">Two</a></li>
+      <li class="three" value="three"><a href="#!" id="tres">Three</a></li>
+      <li class="four" value="four"><a href="#!" id="quatro">Four</a></li>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">GO!</i></a>
+  </div>
+  <br>
+
+
+  <canvas id="myChart" width="1300" height="400"></canvas>
+
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var sugar; 
+    var cal; 
+    
+    var chart = new Chart(ctx, {
+      // The type of chart to create
+      type: 'bar',
+
+      // The data for our dataset
+      data: {
+        labels: ["Coke", "Red Bull", "Monster", "Mountain Dew"],
+        datasets: [{
+          label: "Quantity of Beverage Consumed",
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13, 40, 56, 17]
+        }]
+      },
+
+      // Configuration options go here
+      options: {
+
+        responsive: true,
+
+      }
+    });
+  </script>
+
+  <footer class="page-footer light-blue darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 ">
+          <h5 class="white-text">Group 6 Project 1:</h5>
+          <p class="grey-text text-lighten-4">John Mappin | Luke Fuller | Stuart Miller | Pranay Prathipati</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2019 Copyright
+        <a class="grey-text text-lighten-4 right" href="#!">Insert Github Link</a>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+  $(document).ready(function () {
+    $('.slider').slider({indicators:false});
+
+
+  });
+</Script>
+
+</html>
